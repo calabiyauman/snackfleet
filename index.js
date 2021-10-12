@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import { registerRootComponent } from 'expo';
 import App from './App';
+import Map from './map';
 //import Home from './Home';
 //import Profile from './Profile';
 
