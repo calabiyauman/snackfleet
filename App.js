@@ -1,26 +1,27 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Dimensions, Text, View, Image, Button, SafeAreaView, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import Axios from 'axios';
+import Map from "./map";
 
 const Stack = createNativeStackNavigator();
 
-const HomeScreen = () => {
-  return (
-    <View style={{ flex: 1,alignContent: 'center', alignItems: 'center', justifyContent: 'center' }}>
-      <FlatList>1st</FlatList>
-      <FlatList>2nd</FlatList>
-    </View>
-  );
-}
+Axios.get('localhost:8000/app/v1/admin_routes/country')
+  .then((response) => {
+    console.log(response);
+
+  });
+
 
 const LogoImage = () => {
   return (
     
+
+
   <SafeAreaView style = {styles.container}>
-  
+  <Map></Map>
     
 <View style={styles.imageContainer}>
 
@@ -61,7 +62,7 @@ imageContainer: {
   zIndex:10000,
 },
   pressme: {
-    flex: 0,
+    flex: 1,
     backgroundColor: '#fee715ff',
     marginTop: 10,
     paddingVertical: 20,
